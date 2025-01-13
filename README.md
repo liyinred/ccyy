@@ -62,6 +62,9 @@ git push --force origin main  # 慎用!!!
 ```bash
 git pull origin main
 
+git fetch origin
+git merge origin/main
+
 git push origin main
 ```
 
