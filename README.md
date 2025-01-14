@@ -62,6 +62,9 @@ git push --force origin main  # 慎用!!!
 ```bash
 git pull origin main
 
+#放弃所有本地更改
+git reset --hard HEAD
+
 git fetch origin
 git merge origin/main
 
