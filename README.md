@@ -18,6 +18,10 @@ bind-address = 0.0.0.0
 
 ```bash
 # 克隆仓库
+git config --global http.proxy http://127.0.0.1:7890
+
+git config --global https.proxy http://127.0.0.1:7890
+
 git clone https://github.com/liyinred/ccyy.git
 
 # 进入仓库目录
