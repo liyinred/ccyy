@@ -110,4 +110,22 @@ git merge restore_branch
 # 删除临时恢复的分支
 git branch -d restore_branch
 ```
-![Weixin Screenshot_20240709163830](https://github.com/liyinred/ccyy/assets/83255231/95e7f6f4-2a23-45c4-9c5a-0cd754e749d7)
+### Git_change_commit_email
+```bash
+git filter-branch -f --env-filter '
+OLD_EMAIL="ubuntu@localhost.localdomain"
+CORRECT_NAME="wenhao-pc"
+CORRECT_EMAIL="liyinred@foxmail.com"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+
+```
