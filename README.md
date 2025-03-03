@@ -73,6 +73,9 @@ git fetch origin
 git merge origin/main
 
 git push origin main
+
+git clean -n
+git clean -f
 ```
 
 另外一种方法是使用```git pull --rebase```命令，这样可以避免在历史记录中生成额外的合并提交：
